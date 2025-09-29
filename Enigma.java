@@ -20,13 +20,26 @@ public class Enigma{
 
 
     public String decrypt(String message){        
-        //TODO
+        StringBuilder out = new StringBuilder();
+        for (int i = 0; i < message.length(); i++) {
+            char c = message.charAt(k);
+
+            int i0 = rotors[0].indexOf(c);
+            char cOuter1 = rotors[2].charAt(i0);
+
+            int i1 = rotors[1].indexOf(cOuter1);
+            char enc = rotors[2].charAt(i1);
+
+            out.append(enc);
+            rotate();
+        }
+        return out.toString();
     }
 
 
     
     public String encrypt(String message){
-        //TODO
+        
     }
 
     
