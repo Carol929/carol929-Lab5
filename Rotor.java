@@ -8,22 +8,28 @@ public class Rotor {
         this.rotorValues = new String(v);
         this.startChar = c;
         
-        while(!this.rotate());
+        while (charAt(0) != startChar) {
+            rotate();
+        }
             
     }
     
     public boolean rotate(){
-        //TODO
-               
+        int n = rotorValues.length();
+        char last = rotorValues.charAt(n - 1);
+        rotorValues = last + rotorValues.substring(0, n - 1);
+        return rotorValues.charAt(0) == startChar;
     }
     
 
     public int indexOf(char c){
-        //TODO
+        return rotorValues.indexOf(c);
     }
 
     public char charAt(int idx){
-        //TODO
+        return rotorValues.charAt(idx);
     }
 }
     
+
+
