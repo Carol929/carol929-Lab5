@@ -39,7 +39,20 @@ public class Enigma{
 
     
     public String decrypt(String message){
-        
+        StringBuilder out = new StringBuilder();
+        for (int i = 0; i < message.length(); i++) {
+            char c = message.charAt(i);
+
+            int i0 = rotors[2].indexOf(c);
+            char cMid = rotors[1].charAt(i0);
+
+            int i1 = rotors[2].indexOf(cMid);
+            char dec = rotors[0].charAt(i1);
+
+            out.append(dec);
+            rotate(); 
+        }
+        return out.toString();
     }
 
     
