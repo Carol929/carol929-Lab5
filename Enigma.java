@@ -19,10 +19,10 @@ public class Enigma{
     }
 
 
-    public String decrypt(String message){        
+    public String encrypt(String message){        
         StringBuilder out = new StringBuilder();
         for (int i = 0; i < message.length(); i++) {
-            char c = message.charAt(k);
+            char c = message.charAt(i);
 
             int i0 = rotors[0].indexOf(c);
             char cOuter1 = rotors[2].charAt(i0);
@@ -38,7 +38,7 @@ public class Enigma{
 
 
     
-    public String encrypt(String message){
+    public String decrypt(String message){
         
     }
 
